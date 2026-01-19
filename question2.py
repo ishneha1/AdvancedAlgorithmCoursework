@@ -64,4 +64,44 @@ def max_shatter_points(tile_multipliers):
     # tiles[0] and tiles[n-1] are the boundaries (both are 1), rest are original tiles
     return dp[0][n - 1]
 
+if __name__ == "__main__":
+    print("\n" + "=" * 70)
+    print("STRATEGIC TILE SHATTER - PROCEDURAL DYNAMIC PROGRAMMING")
+    print("=" * 70)
+    
+    # Test Case 1: Multiple tiles
+    print("\nTest Case 1: Multiple Tiles")
+    print("-" * 70)
+    
+    test_tiles_1 = [3, 1, 5, 8]
+    result_1 = max_shatter_points(test_tiles_1)
+    expected_1 = 167
+    
+    print(f"Tile Multipliers: {test_tiles_1}")
+    print(f"Calculated Points: {result_1}")
+    print(f"Expected Points:   {expected_1}")
+    
+    status_1 = "PASS" if result_1 == expected_1 else "FAIL"
+    print(f"Test Status: {status_1}")
+    
+    # Test Case 2: Two tiles
+    print("\nTest Case 2: Two Tiles")
+    print("-" * 70)
+    
+    test_tiles_2 = [1, 5]
+    result_2 = max_shatter_points(test_tiles_2)
+    expected_2 = 10
+    
+    print(f"Tile Multipliers: {test_tiles_2}")
+    print(f"Calculated Points: {result_2}")
+    print(f"Expected Points:   {expected_2}")
+    
+    status_2 = "PASS" if result_2 == expected_2 else "FAIL"
+    print(f"Test Status: {status_2}")
+    
+    print("\n" + "=" * 70)
+    if status_1 == "PASS" and status_2 == "PASS":
+        print("ALL TESTS PASSED!")
+    print("=" * 70 + "\n")
+
 
