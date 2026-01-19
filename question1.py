@@ -97,4 +97,18 @@ def compute_optimal_hub_location(sensor_locations):
     
     return round(total_distance, 5)
 
+if __name__ == "__main__":
+    # Test Case 1: Square configuration
+    test_case_1 = [[0, 1], [1, 0], [1, 2], [2, 1]]
+    result_1 = compute_optimal_hub_location(test_case_1)
+    print(f"Test Case 1: {test_case_1}")
+    print(f"Result: {result_1}, Expected: 4.0")
+    print(f"Match: {abs(result_1 - 4.0) < 0.01}\n")
+    
+    # Test Case 2: Two points
+    test_case_2 = [[1, 1], [3, 3]]
+    result_2 = compute_optimal_hub_location(test_case_2)
+    print(f"Test Case 2: {test_case_2}")
+    print(f"Result: {result_2}, Expected: 2.82843")
+    print(f"Match: {abs(result_2 - 2.82843) < 0.01}")
 
