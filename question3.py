@@ -94,3 +94,23 @@ def min_service_centers(root):
     return service_centers_count
 
 
+if __name__ == "__main__":
+    # Test tree: {0, 0, null, 0, null, 0, null, null, 0}
+    # Interpreted as level-order list: [0,0,None,0,None,0,None,None,0]
+    level_order = [0, 0, None, 0, None, 0, None, None, 0]
+    root = build_tree_from_level_list(level_order)
+    result = min_service_centers(root)
+    print("Procedural Greedy Result:", result)
+    print("Expected: 2")
+
+    print("Test Case 2 (Balanced tree):")
+    level_order2 = [0, 1, 2, 3, 4, 5, 6]
+    root2 = build_tree_from_level_list(level_order2)
+    result2 = min_service_centers(root2)
+    print("Procedural Greedy Result:", result2)
+    print("Expected: 2")
+    print("Explanation: Centers at nodes 1 and 2 cover all nodes")
+    print("  - Node 1 covers: 0, 1, 3, 4")
+    print("  - Node 2 covers: 2, 5, 6")
+
+
